@@ -30,7 +30,13 @@ $('#addDependent').on( "click", function()
                                   '  <label> Annual Benefit Cost' +
                                   '    <input class="cost" id=' + dependentCostId + ' type="text">' +
                                   '  </label>' +
-                                  '  <button onclick="$(this).parent().remove()"><i id="removeDependent" class="fa-solid fa-minus"></i> Remove Dependent</button>' +
+                                  '  <button onclick="RemoveDependent(this)"><i id="removeDependent" class="fa-solid fa-minus"></i> Remove Dependent</button>' +
                                   '</div>');
 });
 
+function RemoveDependent(element)
+{
+  $(this).parent().remove();
+
+  BenefitCostCalculator.CalculateBenefitCost();
+}
