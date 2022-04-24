@@ -36,7 +36,7 @@ $('#addDependent').on( "click", function()
 
 function RemoveDependent(element)
 {
-  $(this).parent().remove();
+  $(element).parent().remove();
 
   BenefitCostCalculator.CalculateBenefitCost();
 }
