@@ -1,15 +1,18 @@
-body{
+body {
     font-family: sofia-pro,sans-serif;
-    background-color: white;
+    background-color: #323e48;
     margin: 0;
     height: 100vh;
 }
 
-hr{ 
+hr { 
     height: 1px;
     background-color: rgb(58, 223, 58);
 }
 
+main {
+  display: block;
+}
 #pageTitle {
     display: flex;
     height: 5%;
@@ -19,14 +22,6 @@ hr{
     padding-left: .25em;
 }
 
-.hero{
-    background-size: cover;
-    background-position: center;
-    width: 50wh;
-    height: 10vh;
-    display: flex;
-}
-  
 .footer {
   position: absolute;
   bottom: 0;

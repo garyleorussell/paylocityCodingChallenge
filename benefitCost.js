@@ -18,9 +18,11 @@ $('.lastName').on( "blur", function()
 
 $('#addDependent').on( "click", function()
 {
-  console.info("adding dependent");
+  // since adding dependents is dynamic see how many user has inputted up to this point
+  // this allows for unique id to be applied
   var numberOfDependents = $('#dependentContainer > div').length;
-  console.info("there are " + numberOfDependents + " dependents");
+  
+  // set unique id
   var dependentNameId = "dependent" + (numberOfDependents + 1) + "Name";
   var dependentCostId = "dependent" + (numberOfDependents + 1) + "BenefitCost";
   $('#dependentContainer').append('<div>' + 
@@ -34,6 +36,7 @@ $('#addDependent').on( "click", function()
                                   '</div>');
 });
 
+// this function is here to remove dependent and then recalculate benefit cost
 function RemoveDependent(element)
 {
   $(element).parent().remove();
