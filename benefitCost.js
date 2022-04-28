@@ -1,20 +1,3 @@
-$('.lastName').on( "blur", function()
-{// todo add checks if name is filled in
-  console.log(this);
-  // this is a given standard cost
-  var benefitCost = 1000;
-  // there is a 10 % discount
-  var discount = (1000 * 0.1); 
-  // get the employee firstname
-  var firstName = $('.employeeFirstName').val();
-  
-  // if the employee's first name starts with an A apply discount
-  if (firstName.substring(0, 1).toLowerCase() === 'a')
-    benefitCost = 1000 - discount;
-  
-  // add cost to text field  
-  $('#employeeBenefitCost').val(benefitCost);
-});
 
 $('#addDependent').on( "click", function()
 {
@@ -27,7 +10,7 @@ $('#addDependent').on( "click", function()
   var dependentCostId = "dependent" + (numberOfDependents + 1) + "BenefitCost";
   $('#dependentContainer').append('<div>' + 
                                   '  <label> Name      ' +
-                                  '    <input id=' + dependentNameId + ' type="text"  onblur="BenefitCostCalculator.AddBenefitCost(' + dependentNameId + ', ' + dependentCostId + ')"> ' +
+                                  '    <input id=' + dependentNameId + ' type="text"  onblur="BenefitCostCalculator.AddBenefitCost(this.value, ' + dependentCostId + ')"> ' +
                                   '  </label>' +
                                   '  <label> Annual Benefit Cost' +
                                   '    <input class="cost" id=' + dependentCostId + ' type="text">' +
