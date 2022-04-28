@@ -2,7 +2,6 @@ var BenefitCostCalculator =
 {
   AddBenefitCost: function(nameElement, costInputId)
   {
-    console.log("hi" , $(nameElement).attr("id").indexOf("dependent"));
     var name = $(nameElement).val();
     // this is a given standard cost for employees
     var benefitCost = 1000;
@@ -31,7 +30,10 @@ var BenefitCostCalculator =
     var numberOfPaychecksPerYear = parseInt($('#numOfPeriods').val());
 
     // get how much employee is paid per check
-    var payPerCheck = parseFloat($('#payPerCheck').val());
+    var payPerCheck = 0;
+    
+    if ($('#payPerCheck') !== undefined && $('#payPerCheck') >= 0)
+      payPerCheck = parseFloat($('#payPerCheck').val());
     
     var summedCost = 0;
 
@@ -52,7 +54,7 @@ var BenefitCostCalculator =
     $('.paycheckDeduction').val(payCheckDeduction.toFixed(2));
 
     // terrnary to see if payPerCheck is zero this avoids a negative number
-    var payAfterDeduction = (payPerCheck > 0) ? (payPerCheck - payCheckDeduction).toFixed(2) : 0
+    var payAfterDeduction = (payPerCheck > 0) ? (payPerCheck - payCheckDeduction).toFixed(2) : 0;
     $('.payAfterDeduction').val(payAfterDeduction);
   }
 };
