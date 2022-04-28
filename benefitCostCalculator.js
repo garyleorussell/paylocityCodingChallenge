@@ -1,14 +1,14 @@
 var BenefitCostCalculator = 
 {
-  AddBenefitCost: function(name, costInputId)
+  AddBenefitCost: function(nameElement, costInputId)
   {
-    console.log(this);
-    
+    console.log("hi" , $(nameElement).attr("id").indexOf("dependent"));
+    var name = $(nameElement).val();
     // this is a given standard cost for employees
     var benefitCost = 1000;
 
     // dependents cost 500
-    if (name.indexOf("dependent") >= 0)
+    if ($(nameElement).attr("id").indexOf("dependent") >= 0)
       benefitCost = 500;
 
     // there is a 10 % discount
@@ -16,7 +16,7 @@ var BenefitCostCalculator =
     
     // if the employee's or dependent's first name starts with an A apply discount
     if (name.substring(0, 1).toLowerCase() === 'a')
-      benefitCost = 1000 - discount;
+      benefitCost -= discount;
       
     // add cost to text field  
     $(costInputId).val(benefitCost);

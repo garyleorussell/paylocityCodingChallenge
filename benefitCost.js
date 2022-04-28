@@ -10,7 +10,7 @@ $('#addDependent').on( "click", function()
   var dependentCostId = "dependent" + (numberOfDependents + 1) + "BenefitCost";
   $('#dependentContainer').append('<div>' + 
                                   '  <label> Name      ' +
-                                  '    <input id=' + dependentNameId + ' type="text"  onblur="BenefitCostCalculator.AddBenefitCost(this.value, ' + dependentCostId + ')"> ' +
+                                  '    <input id=' + dependentNameId + ' type="text"  onblur="BenefitCostCalculator.AddBenefitCost(this, ' + dependentCostId + ')"> ' +
                                   '  </label>' +
                                   '  <label> Annual Benefit Cost' +
                                   '    <input class="cost" id=' + dependentCostId + ' type="text">' +
